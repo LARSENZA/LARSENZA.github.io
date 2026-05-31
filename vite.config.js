@@ -10,6 +10,6 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/larsen-math-academy/",
+  base: "/",
   plugins: [react(), tailwindcss()],
 });
