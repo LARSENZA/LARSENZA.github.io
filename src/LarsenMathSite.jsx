@@ -37,8 +37,12 @@ export default function LarsenMathSite() {
       <header className="/*border*/-b bg-white">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2 text-lg font-semibold">
-            <span>🦙</span>
-            <span>Larsen Math Academy</span>
+            <img
+  src="/favicon2.svg"
+  alt="Larsen Math Academy logo"
+  className="w-6 h-6"
+/>
+<span>Larsen Math Academy</span>
           </div>
           <div className="flex items-center gap-4">
             <a
