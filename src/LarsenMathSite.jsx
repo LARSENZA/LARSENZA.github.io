@@ -34,7 +34,7 @@ export default function LarsenMathSite() {
       className="min-h-screen bg-white text-gray-900"
       style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
     >
-      <header className="/*border*/-b bg-white">
+      <header className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2 text-lg font-semibold">
             <img
