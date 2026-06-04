@@ -28,7 +28,7 @@ export default function LarsenMathSite() {
   ];
 
   const duplicatedTestimonials = [...testimonials, ...testimonials];
-  <main id="top"></main>;
+  
   return (
     <div
       className="min-h-screen bg-white text-gray-900"
@@ -36,14 +36,14 @@ export default function LarsenMathSite() {
     >
       <header className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2 text-lg font-semibold">
+          <a href="#top" className="flex items-center gap-2 text-lg font-semibold">
             <img
   src="/favicon2.svg"
   alt="Larsen Math Academy logo"
   className="w-6 h-6"
 />
 <span>Larsen Math Academy</span>
-          </div>
+          </a>
           <div className="flex items-center gap-4">
             <a
               href="https://wa.me/27794083205"
@@ -60,7 +60,7 @@ export default function LarsenMathSite() {
         </div>
       </header>
 
-      <main>
+      <main id="top">
         {/* HERO */}
         <section className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
