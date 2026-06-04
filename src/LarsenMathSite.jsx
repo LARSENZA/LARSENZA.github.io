@@ -36,7 +36,7 @@ export default function LarsenMathSite() {
     >
       <header className="sticky top-0 z-50 bg-white">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#top" className="flex items-center gap-2 text-lg font-semibold">
+          <a href="#top" className="flex items-center gap-2 text-lg font-semibold no-underline text-gray-900">
             <img
   src="/favicon2.svg"
   alt="Larsen Math Academy logo"
