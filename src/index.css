@@ -8,6 +8,15 @@
     transform: translateX(-50%);
   }
 }
+.pause-scroll {
+  touch-action: manipulation;
+}
+
+.pause-scroll:hover,
+.pause-scroll:active {
+  animation-play-state: paused;
+}
+
 html {
   scroll-behavior: smooth;
 }
