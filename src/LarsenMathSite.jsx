@@ -199,7 +199,21 @@ export default function LarsenMathSite() {
               <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-50 to-transparent z-10" />
 
               <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
-                <div className="flex gap-6 w-max animate-[testimonial-scroll_70s_linear_infinite] hover:[animation-play-state:paused]">
+                <div
+                      className="flex gap-6 w-max animate-[testimonial-scroll_70s_linear_infinite] hover:[animation-play-state:paused]"
+                      onTouchStart={(e) => {
+                        e.currentTarget.style.animationPlayState = "paused";
+                      }}
+                      onTouchEnd={(e) => {
+                        e.currentTarget.style.animationPlayState = "running";
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.animationPlayState = "paused";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.animationPlayState = "running";
+                      }}
+                    >
                   {duplicatedTestimonials.map((item, index) => (
                     <div
                       key={`${item.author}-${index}`}
