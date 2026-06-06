@@ -488,9 +488,51 @@ const whatsappLink = "https://wa.me/27794083205";
             </div>
           </div>
         </section>
+
+                {/* OFFER */}
+        <section className="max-w-5xl mx-auto px-6 py-16">
+          ...
+        </section>
+
+        {/* PRICING */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-5xl mx-auto px-6">
+            <h2 className="text-2xl font-semibold text-center">Pricing</h2>
+            <p className="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
+              Pricing is confirmed before booking, based on the lesson format,
+              frequency, and learner’s needs.
+            </p>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-8">
+              <div className="bg-white border rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold">Private Lessons</h3>
+                <p className="mt-3 text-3xl font-bold">From R250/hr</p>
+                <p className="mt-3 text-gray-600">
+                  Best for personalised support, weak topics, exam preparation,
+                  and focused one-on-one guidance.
+                </p>
+              </div>
+
+              <div className="bg-white border rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold">Group Sessions</h3>
+                <p className="mt-3 text-3xl font-bold">More affordable</p>
+                <p className="mt-3 text-gray-600">
+                  Best for structured weekly practice with other learners.
+                  Pricing is confirmed based on the group schedule and session
+                  length.
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-sm text-gray-500">
+              No commitment. No upfront payment before details are confirmed.
+            </p>
+          </div>
+        </section>
+
         
         {/* HOW IT WORKS */}
-        <section className="bg-gray-50 py-16">
+        <section className="py-16">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-2xl font-semibold text-center">How it works</h2>
             <div className="mt-10 grid md:grid-cols-3 gap-6 text-center">
