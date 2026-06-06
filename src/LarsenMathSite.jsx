@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
 export default function LarsenMathSite() {
+  const [page, setPage] = useState(window.location.hash || "#/");
+
+useEffect(() => {
+  const handleHashChange = () => {
+    setPage(window.location.hash || "#/");
+    window.scrollTo(0, 0);
+  };
+
+  window.addEventListener("hashchange", handleHashChange);
+
+  return () => {
+    window.removeEventListener("hashchange", handleHashChange);
+  };
+}, []);
+
+const whatsappLink = "https://wa.me/27794083205";
+  
   const testimonials = [
     {
       quote:
@@ -37,7 +55,7 @@ export default function LarsenMathSite() {
       <header className="sticky top-0 z-50 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <a
-  href="#top"
+  href="#/"
   className="flex items-center justify-center sm:justify-start gap-2 text-lg font-semibold no-underline text-gray-900"
 >
             <img
@@ -48,10 +66,10 @@ export default function LarsenMathSite() {
 <span>Larsen Math Academy</span>
           </a>
           <nav className="flex items-center justify-center gap-3 sm:gap-4 text-sm font-medium w-full sm:w-auto">
-  <a href="#about" className="text-gray-600 hover:text-gray-900">
+  <a href="#/about" className="text-gray-600 hover:text-gray-900">
     About
   </a>
-  <a href="#resources" className="text-gray-600 hover:text-gray-900">
+  <a href="#/resources" className="text-gray-600 hover:text-gray-900">
     Resources
   </a>
   <a
@@ -63,7 +81,7 @@ export default function LarsenMathSite() {
     WhatsApp
   </a>
 
-  <a href="#book" className="text-blue-600">
+  <a href="#/book" className="text-blue-600">
     Book
   </a>
 </nav>
