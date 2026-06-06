@@ -144,7 +144,7 @@ export default function LarsenMathSite() {
       <img
         src="/larsen-profile.webp"
         alt="Larsen, maths tutor at Larsen Math Academy"
-        className="w-40 h-40 rounded-2xl object-cover shadow-sm border"
+        className="w-40 h-40 rounded-full object-cover shadow-md border-4 border-white ring-1 ring-gray-200"
       />
     </div>
 
