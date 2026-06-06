@@ -459,13 +459,13 @@ const whatsappLink = "https://wa.me/27794083205";
         {/* OFFER */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <h2 className="text-2xl font-semibold text-center">
-            Choose the right option
+            Choose a lesson format
           </h2>
           <div className="mt-10 grid md:grid-cols-2 gap-8">
             <div className="border rounded-xl p-6">
               <h3 className="text-xl font-semibold">Private Lessons (1:1)</h3>
               <p className="mt-3 text-gray-600">
-                Personalised support focused on your child’s exact gaps and
+                Personalised support focused on your learner’s exact gaps and
                 goals.
               </p>
               <ul className="mt-4 text-sm text-gray-600 space-y-2">
@@ -491,7 +491,7 @@ const whatsappLink = "https://wa.me/27794083205";
 
                 {/* OFFER */}
         <section className="max-w-5xl mx-auto px-6 py-16">
-          ...
+      
         </section>
 
         {/* PRICING */}
@@ -539,7 +539,7 @@ const whatsappLink = "https://wa.me/27794083205";
               <div>
                 <div className="text-lg font-semibold">1. Send a request</div>
                 <p className="mt-2 text-gray-600">
-                  Tell me your child’s grade and challenges
+                  Tell me the learner’s grade and challenges
                 </p>
               </div>
               <div>
@@ -551,7 +551,7 @@ const whatsappLink = "https://wa.me/27794083205";
               <div>
                 <div className="text-lg font-semibold">3. Start lessons</div>
                 <p className="mt-2 text-gray-600">
-                  All sessions run online via Teams
+                  All sessions run online via Microsoft Teams
                 </p>
               </div>
             </div>
