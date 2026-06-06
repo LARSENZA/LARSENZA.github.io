@@ -323,18 +323,36 @@ const whatsappLink = "https://wa.me/27794083205";
       </p>
       <a
         href="#/book"
-        className="inline-block mt-6 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium"
+        className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg"
       >
-        Request a lesson
+        Book a lesson
       </a>
     </section>
   </main>
-): page === "#/book" ? (
-  <main className="max-w-3xl mx-auto px-6 py-16">
-    <h1 className="text-4xl font-bold text-center">Request a lesson</h1>
-    <p className="mt-4 text-center text-gray-600">
-      This will become the booking page.
-    </p>
+) : page === "#/book" ? (
+  <main>
+    <section id="book" className="max-w-3xl mx-auto px-6 py-16">
+      <h1 className="text-4xl font-bold text-center">Book a lesson</h1>
+      <p className="mt-4 text-center text-gray-600">
+        I’ll reply within 24 hours with availability and next steps.
+      </p>
+
+      <div className="mt-8 rounded-2xl border bg-white overflow-hidden shadow-sm">
+        <iframe
+          src="https://tally.so/r/xXNLLE?transparentBackground=1"
+          title="Book a lesson"
+          className="w-full h-[1200px] md:h-[900px] lg:h-[850px]"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+          loading="lazy"
+        />
+      </div>
+
+      <p className="mt-4 text-center text-sm text-gray-500">
+        No commitment. No upfront payment.
+      </p>
+    </section>
   </main>
 ) : (
 
@@ -351,7 +369,7 @@ const whatsappLink = "https://wa.me/27794083205";
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="#book"
+              href="#/book"
               className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg"
             >
               Book a lesson
@@ -599,78 +617,7 @@ const whatsappLink = "https://wa.me/27794083205";
     ))}
   </div>
 </section>
-        {/* BOOKING */}
-        <section id="book" className="max-w-3xl mx-auto px-6 py-16">
-          <h2 className="text-2xl font-semibold text-center">
-            Request a lesson
-          </h2>
-          <p className="text-center text-gray-600 mt-2">
-            I’ll reply within 24 hours with availability and next steps
-          </p>
-
-          {/*  //Calendly for future usage
-          <div className="mt-6 text-center">
-            <a
-              href="https://calendly.com/larsenmath"
-              target="_blank"
-              className="inline-block mb-6 bg-gray-900 text-white px-6 py-3 rounded-lg font-medium"
-            >
-              View Available Time Slots
-            </a>
-          </div> */}
-          <div className="mt-8 rounded-2xl border bg-white overflow-hidden shadow-sm">
-            <iframe
-                src="https://tally.so/r/xXNLLE?transparentBackground=1"
-                title="Request a lesson"
-                className="w-full h-[1200px] md:h-[900px] lg:h-[850px]"
-                frameBorder="0"
-                marginHeight="0"
-                marginWidth="0"
-                loading="lazy"
-              />
-          </div>
-          <div className="mt-4 space-y-4">
-            {/* <input
-              className="w-full border rounded-lg px-4 py-3"
-              placeholder="Parent name"
-            />
-            <input
-              className="w-full border rounded-lg px-4 py-3"
-              placeholder="Email address"
-            />
-            <input
-              className="w-full border rounded-lg px-4 py-3"
-              placeholder="Student grade (10, 11 or 12)"
-            />
-            <select className="w-full border rounded-lg px-4 py-3">
-              <option>Preferred option</option>
-              <option>Private (1:1)</option>
-              <option>Group (Fri–Sun)</option>
-            </select>
-            <textarea
-              className="w-full border rounded-lg px-4 py-3"
-              rows={4}
-              placeholder="What does your child need help with?"
-            />
-
-            <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold">
-              Request lesson
-            </button> */}
-
-            <p className="text-center text-sm text-gray-500">
-              No commitment. No upfront payment.
-            </p>
-            {/* BACK TO TOP */}
-            <div className="fixed bottom-6 right-6">
-              <a
-                href="#top"
-                className="bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg text-sm font-medium hover:bg-blue-700"
-              >
-                ↑ Top
-              </a>
-            </div>
-          </div>
-        </section>
+       
       </main>
     )}
     </div>
