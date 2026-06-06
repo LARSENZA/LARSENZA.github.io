@@ -88,6 +88,29 @@ const whatsappLink = "https://wa.me/27794083205";
         </div>
       </header>
 
+      {page === "#/about" ? (
+  <main className="max-w-5xl mx-auto px-6 py-16">
+    <h1 className="text-4xl font-bold">About Larsen Math Academy</h1>
+    <p className="mt-4 text-gray-600">
+      This will become the full About page.
+    </p>
+  </main>
+) : page === "#/resources" ? (
+  <main className="max-w-5xl mx-auto px-6 py-16">
+    <h1 className="text-4xl font-bold">Free Maths Resources</h1>
+    <p className="mt-4 text-gray-600">
+      This will become the full Resources page.
+    </p>
+  </main>
+) : page === "#/book" ? (
+  <main className="max-w-3xl mx-auto px-6 py-16">
+    <h1 className="text-4xl font-bold text-center">Request a lesson</h1>
+    <p className="mt-4 text-center text-gray-600">
+      This will become the booking page.
+    </p>
+  </main>
+) : (
+
       <main id="top">
         {/* HERO */}
         <section className="max-w-5xl mx-auto px-6 py-16 text-center">
@@ -531,6 +554,7 @@ const whatsappLink = "https://wa.me/27794083205";
           </div>
         </section>
       </main>
+    )}
     </div>
   );
 }
