@@ -335,7 +335,7 @@ const whatsappLink = "https://wa.me/27794083205";
       </p>
       <a
         href="#/book"
-        className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg"
+        className="inline-block mt-6 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg"
       >
         Book a lesson
       </a>
