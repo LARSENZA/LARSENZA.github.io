@@ -35,8 +35,11 @@ export default function LarsenMathSite() {
       style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
     >
       <header className="sticky top-0 z-50 bg-white">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#top" className="flex items-center gap-2 text-lg font-semibold no-underline text-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+          <a
+  href="#top"
+  className="flex items-center justify-center sm:justify-start gap-2 text-lg font-semibold no-underline text-gray-900"
+>
             <img
   src="/favicon2.svg"
   alt="Larsen Math Academy logo"
