@@ -44,19 +44,26 @@ export default function LarsenMathSite() {
 />
 <span>Larsen Math Academy</span>
           </a>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://wa.me/27794083205"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-medium text-green-600"
-            >
-              WhatsApp
-            </a>
-            <a href="#book" className="text-sm font-medium text-blue-600">
-              Book
-            </a>
-          </div>
+          <nav className="flex items-center gap-3 sm:gap-4 text-sm font-medium">
+  <a href="#about" className="text-gray-600 hover:text-gray-900">
+    About
+  </a>
+  <a href="#resources" className="text-gray-600 hover:text-gray-900">
+    Resources
+  </a>
+  <a
+    href="https://wa.me/27794083205"
+    target="_blank"
+    rel="noreferrer"
+    className="text-green-600"
+  >
+    WhatsApp
+  </a>
+
+  <a href="#book" className="text-blue-600">
+    Book
+  </a>
+</nav>
         </div>
       </header>
 
@@ -67,8 +74,8 @@ export default function LarsenMathSite() {
             Grade 10–12 Math Support
           </h1>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Clear explanations, structured lessons, and real improvement for
-            IEB,CAPS and Cambridge International high school students.
+            Clear explanations, structured online lessons, and patient support to help
+            IEB, CAPS and Cambridge International high school students improve confidence, exam readiness and marks.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
