@@ -137,7 +137,58 @@ export default function LarsenMathSite() {
             </a>
           </div>
         </section>
+        {/* ABOUT */}
+<section id="about" className="max-w-5xl mx-auto px-6 py-16">
+  <div className="grid md:grid-cols-[220px_1fr] gap-8 items-center">
+    <div className="flex justify-center md:justify-start">
+      <img
+        src="/larsen-profile.webp"
+        alt="Larsen, maths tutor at Larsen Math Academy"
+        className="w-40 h-40 rounded-2xl object-cover shadow-sm border"
+      />
+    </div>
 
+    <div>
+      <h2 className="text-2xl font-semibold">Meet Larsen</h2>
+      <p className="mt-4 text-gray-600 leading-7">
+        I help Grade 10–12 learners understand maths through clear
+        explanations, structured practice, and patient support. My lessons are
+        designed for students who want to improve confidence, prepare for tests
+        and exams, or close gaps from earlier topics.
+      </p>
+
+      <div className="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
+        <p>
+          <strong className="text-gray-900">Lessons:</strong> Online via
+          Microsoft Teams
+        </p>
+        <p>
+          <strong className="text-gray-900">Response:</strong> Within 24 hours
+        </p>
+        <p>
+          <strong className="text-gray-900">WhatsApp:</strong>{" "}
+          <a
+            href="https://wa.me/27794083205"
+            target="_blank"
+            rel="noreferrer"
+            className="text-green-600 font-medium"
+          >
+            +27 79 408 3205
+          </a>
+        </p>
+        <p>
+          <strong className="text-gray-900">Email:</strong>{" "}
+          <a
+            href="mailto:larsenmbhoni@gmail.com"
+            className="text-blue-600 font-medium"
+          >
+            larsenmbhoni@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
         {/* OFFER */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <h2 className="text-2xl font-semibold text-center">
