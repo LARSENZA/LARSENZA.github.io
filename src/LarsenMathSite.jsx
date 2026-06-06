@@ -44,17 +44,17 @@ const whatsappLink = "https://wa.me/27794083205";
     {
       quote:
         "The tutor was so great. He went through the theory in depth and assisted in answering questions that I struggled with. After the session, I was quite confident that I had gained more knowledge than I had gained in my lectures!",
-      author: "Student",
+      author: "learner",
     },
     {
       quote:
         "Those 3-hour sessions felt like 10 minutes because of how informative and enjoyable the tutor made them. We’re truly grateful and I hope we all make you proud.",
-      author: "Students",
+      author: "learners",
     },
     {
       quote:
         "I love the way the tutor explained concepts. The teaching style is easy to understand and many of my questions were answered in a simple and clear way.",
-      author: "Student",
+      author: "learner",
     },
   ];
 
@@ -125,7 +125,7 @@ const whatsappLink = "https://wa.me/27794083205";
           <p className="mt-5 text-lg text-gray-600 leading-8">
             Hi, I’m Larsen. I help Grade 10–12 learners understand Maths
             through clear explanations, structured practice, and patient
-            support. My lessons are designed for students who want to improve
+            support. My lessons are designed for learners who want to improve
             confidence, prepare for tests and exams, or close gaps from earlier
             topics.
           </p>
@@ -376,7 +376,7 @@ const whatsappLink = "https://wa.me/27794083205";
           </h1>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
             Clear explanations, structured online lessons, and patient support to help
-            IEB, CAPS and Cambridge International high school students improve confidence, exam readiness and marks.
+            IEB, CAPS and Cambridge International high school learners improve confidence, exam readiness and marks.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
@@ -443,9 +443,9 @@ const whatsappLink = "https://wa.me/27794083205";
 
     <div className="mt-8 grid md:grid-cols-2 gap-4">
       {[
-        "Students who struggle to understand concepts in class",
-        "Learners preparing for tests, exams, and past-paper practice",
-        "Students who need structured weekly maths support",
+        "learners who struggle to understand concepts in class",
+        "learners preparing for tests, exams, and past-paper practice",
+        "learners who need structured weekly maths support",
         "Grade 10–12 learners studying IEB, CAPS, or Cambridge International",
       ].map((item) => (
         <div key={item} className="border rounded-xl p-5 bg-white">
@@ -478,7 +478,7 @@ const whatsappLink = "https://wa.me/27794083205";
             <div className="border rounded-xl p-6">
               <h3 className="text-xl font-semibold">Group Sessions</h3>
               <p className="mt-3 text-gray-600">
-                Structured lessons covering key topics with other students.
+                Structured lessons covering key topics with other learners.
               </p>
               <ul className="mt-4 text-sm text-gray-600 space-y-2">
                 <li>• Fridays, Saturdays, Sundays</li>
@@ -585,7 +585,7 @@ const whatsappLink = "https://wa.me/27794083205";
         <section className="py-16 bg-gray-50 overflow-hidden">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-2xl font-semibold text-center">
-              What parents and students are saying
+              What parents and learners are saying
             </h2>
             <div className="mt-10 relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-gray-50 to-transparent z-10" />
@@ -645,7 +645,7 @@ const whatsappLink = "https://wa.me/27794083205";
       },
       {
         question: "Which curricula do you support?",
-        answer: "Lessons support IEB, CAPS, and Cambridge International students.",
+        answer: "Lessons support IEB, CAPS, and Cambridge International learners.",
       },
       {
         question: "Do you help with exam revision?",
