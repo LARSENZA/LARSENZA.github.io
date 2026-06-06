@@ -368,6 +368,46 @@ export default function LarsenMathSite() {
           </div>
         </section>
 
+          {/* FAQ */}
+<section className="max-w-5xl mx-auto px-6 py-16">
+  <h2 className="text-2xl font-semibold text-center">
+    Frequently asked questions
+  </h2>
+
+  <div className="mt-10 grid md:grid-cols-2 gap-6">
+    {[
+      {
+        question: "Do you offer online lessons?",
+        answer: "Yes. All lessons run online via Microsoft Teams.",
+      },
+      {
+        question: "Which grades do you tutor?",
+        answer: "Larsen Math Academy focuses on Grade 10–12 Maths.",
+      },
+      {
+        question: "Which curricula do you support?",
+        answer: "Lessons support IEB, CAPS, and Cambridge International students.",
+      },
+      {
+        question: "Do you help with exam revision?",
+        answer: "Yes. Lessons can focus on exam preparation, past papers, weak topics, or weekly support.",
+      },
+      {
+        question: "How do I book a lesson?",
+        answer: "Send a request with the learner’s grade, curriculum, and what they need help with.",
+      },
+      {
+        question: "Do I have to pay upfront?",
+        answer: "No. Availability and pricing are confirmed before booking.",
+      },
+    ].map((item) => (
+      <div key={item.question} className="border rounded-xl p-6 bg-white">
+        <h3 className="font-semibold">{item.question}</h3>
+        <p className="mt-2 text-gray-600">{item.answer}</p>
+      </div>
+    ))}
+  </div>
+</section>
         {/* BOOKING */}
         <section id="book" className="max-w-3xl mx-auto px-6 py-16">
           <h2 className="text-2xl font-semibold text-center">
