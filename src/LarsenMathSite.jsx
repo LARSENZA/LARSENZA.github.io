@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 export default function LarsenMathSite() {
   const [page, setPage] = useState(window.location.hash || "#/");
+  const [showTopButton, setShowTopButton] = useState(false);
 
 useEffect(() => {
   const handleHashChange = () => {
@@ -12,6 +13,18 @@ useEffect(() => {
 
   return () => {
     window.removeEventListener("hashchange", handleHashChange);
+  };
+}, []);
+  useEffect(() => {
+  const handleScroll = () => {
+    setShowTopButton(window.scrollY > 400);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
   };
 }, []);
 
@@ -619,6 +632,19 @@ const whatsappLink = "https://wa.me/27794083205";
        
       </main>
     )}
+      {showTopButton && (
+  <a
+    href="#/"
+    onClick={(e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }}
+    className="fixed bottom-6 right-6 z-50 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg text-sm font-medium hover:bg-blue-700"
+    aria-label="Back to top"
+  >
+    ↑ Top
+  </a>
+)}
     </div>
   );
 }
