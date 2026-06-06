@@ -189,6 +189,27 @@ export default function LarsenMathSite() {
     </div>
   </div>
 </section>
+
+        {/* WHO THIS IS FOR */}
+<section className="bg-gray-50 py-16">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl font-semibold text-center">Who this is for</h2>
+
+    <div className="mt-8 grid md:grid-cols-2 gap-4">
+      {[
+        "Students who struggle to understand concepts in class",
+        "Learners preparing for tests, exams, and past-paper practice",
+        "Students who need structured weekly maths support",
+        "Grade 10–12 learners studying IEB, CAPS, or Cambridge International",
+      ].map((item) => (
+        <div key={item} className="border rounded-xl p-5 bg-white">
+          <p className="text-gray-700">• {item}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+        
         {/* OFFER */}
         <section className="max-w-5xl mx-auto px-6 py-16">
           <h2 className="text-2xl font-semibold text-center">
