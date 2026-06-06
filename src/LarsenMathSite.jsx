@@ -207,13 +207,129 @@ const whatsappLink = "https://wa.me/27794083205";
     </section>
   </main>
 ) : page === "#/resources" ? (
-  <main className="max-w-5xl mx-auto px-6 py-16">
-    <h1 className="text-4xl font-bold">Free Maths Resources</h1>
-    <p className="mt-4 text-gray-600">
-      This will become the full Resources page.
-    </p>
+  <main>
+    <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+      <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide">
+        Free Maths Resources
+      </p>
+
+      <h1 className="mt-3 text-4xl font-bold">
+        Helpful links for Grade 10–12 Maths practice
+      </h1>
+
+      <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
+        These resources can help learners practise between lessons, revise
+        topics, explore graphs, and prepare for tests and exams.
+      </p>
+    </section>
+
+    <section className="bg-gray-50 py-16">
+      <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Past papers</h2>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <a
+                href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                DBE / CAPS past papers
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                Cambridge International resources
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Practice and explanations</h2>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <a
+                href="https://www.khanacademy.org/math"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                Khan Academy Maths
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.siyavula.com/read"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                Siyavula textbooks
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Graphing and visual tools</h2>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <a
+                href="https://www.desmos.com/calculator"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                Desmos Graphing Calculator
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.geogebra.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 font-medium"
+              >
+                GeoGebra
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">How to use resources</h2>
+          <ul className="mt-4 space-y-3 text-gray-600">
+            <li>• Start with the topic you are struggling with.</li>
+            <li>• Use videos or notes to revise the method.</li>
+            <li>• Practise with textbook exercises.</li>
+            <li>• Use past papers once the basics are clearer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section className="max-w-3xl mx-auto px-6 py-16 text-center">
+      <h2 className="text-2xl font-semibold">Need guided help?</h2>
+      <p className="mt-3 text-gray-600">
+        Free resources are useful, but lessons can help when a learner needs
+        structure, explanation, and accountability.
+      </p>
+      <a
+        href="#/book"
+        className="inline-block mt-6 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium"
+      >
+        Request a lesson
+      </a>
+    </section>
   </main>
-) : page === "#/book" ? (
+): page === "#/book" ? (
   <main className="max-w-3xl mx-auto px-6 py-16">
     <h1 className="text-4xl font-bold text-center">Request a lesson</h1>
     <p className="mt-4 text-center text-gray-600">
@@ -396,63 +512,6 @@ const whatsappLink = "https://wa.me/27794083205";
           </div>
         </section>
 
-        {/* RESOURCES */}
-<section id="resources" className="bg-gray-50 py-16">
-  <div className="max-w-5xl mx-auto px-6">
-    <h2 className="text-2xl font-semibold text-center">
-      Free maths resources
-    </h2>
-    <p className="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
-      Helpful links for extra practice between lessons. These resources are
-      useful for revision, past papers, visual learning, and checking concepts.
-    </p>
-
-    <div className="mt-10 grid md:grid-cols-2 gap-6">
-      <div className="border rounded-xl p-6 bg-white">
-        <h3 className="text-lg font-semibold">Past papers</h3>
-        <ul className="mt-4 space-y-3 text-blue-600">
-          <li>
-            <a href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx" target="_blank" rel="noreferrer">
-              DBE / CAPS past papers
-            </a>
-          </li>
-          <li>
-            <a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/" target="_blank" rel="noreferrer">
-              Cambridge International resources
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="border rounded-xl p-6 bg-white">
-        <h3 className="text-lg font-semibold">Practice and explanations</h3>
-        <ul className="mt-4 space-y-3 text-blue-600">
-          <li>
-            <a href="https://www.khanacademy.org/math" target="_blank" rel="noreferrer">
-              Khan Academy Maths
-            </a>
-          </li>
-          <li>
-            <a href="https://www.siyavula.com/read" target="_blank" rel="noreferrer">
-              Siyavula textbooks
-            </a>
-          </li>
-          <li>
-            <a href="https://www.desmos.com/calculator" target="_blank" rel="noreferrer">
-              Desmos graphing calculator
-            </a>
-          </li>
-          <li>
-            <a href="https://www.geogebra.org/" target="_blank" rel="noreferrer">
-              GeoGebra
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-          
         
         {/* TESTIMONIALS */}
         <section className="py-16 bg-gray-50 overflow-hidden">
