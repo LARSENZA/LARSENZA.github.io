@@ -489,11 +489,7 @@ const whatsappLink = "https://wa.me/27794083205";
           </div>
         </section>
 
-                {/* OFFER */}
-        <section className="max-w-5xl mx-auto px-6 py-16">
-      
-        </section>
-
+             
         {/* PRICING */}
         <section className="bg-gray-50 py-16">
           <div className="max-w-5xl mx-auto px-6">
