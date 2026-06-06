@@ -318,8 +318,7 @@ const whatsappLink = "https://wa.me/27794083205";
     <section className="max-w-3xl mx-auto px-6 py-16 text-center">
       <h2 className="text-2xl font-semibold">Need guided help?</h2>
       <p className="mt-3 text-gray-600">
-        Free resources are useful, but lessons can help when a learner needs
-        structure, explanation, and accountability.
+        Free resources are useful, but lessons can help a learner further.
       </p>
       <a
         href="#/book"
