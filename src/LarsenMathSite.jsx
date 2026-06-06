@@ -320,6 +320,62 @@ export default function LarsenMathSite() {
           </div>
         </section>
 
+        {/* RESOURCES */}
+<section id="resources" className="bg-gray-50 py-16">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl font-semibold text-center">
+      Free maths resources
+    </h2>
+    <p className="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
+      Helpful links for extra practice between lessons. These resources are
+      useful for revision, past papers, visual learning, and checking concepts.
+    </p>
+
+    <div className="mt-10 grid md:grid-cols-2 gap-6">
+      <div className="border rounded-xl p-6 bg-white">
+        <h3 className="text-lg font-semibold">Past papers</h3>
+        <ul className="mt-4 space-y-3 text-blue-600">
+          <li>
+            <a href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx" target="_blank" rel="noreferrer">
+              DBE / CAPS past papers
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/" target="_blank" rel="noreferrer">
+              Cambridge International resources
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="border rounded-xl p-6 bg-white">
+        <h3 className="text-lg font-semibold">Practice and explanations</h3>
+        <ul className="mt-4 space-y-3 text-blue-600">
+          <li>
+            <a href="https://www.khanacademy.org/math" target="_blank" rel="noreferrer">
+              Khan Academy Maths
+            </a>
+          </li>
+          <li>
+            <a href="https://www.siyavula.com/read" target="_blank" rel="noreferrer">
+              Siyavula textbooks
+            </a>
+          </li>
+          <li>
+            <a href="https://www.desmos.com/calculator" target="_blank" rel="noreferrer">
+              Desmos graphing calculator
+            </a>
+          </li>
+          <li>
+            <a href="https://www.geogebra.org/" target="_blank" rel="noreferrer">
+              GeoGebra
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
           
         
         {/* TESTIMONIALS */}
