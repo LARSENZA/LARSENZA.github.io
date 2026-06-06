@@ -292,10 +292,36 @@ export default function LarsenMathSite() {
                   All sessions run online via Teams
                 </p>
               </div>
-            </div>
+            </div>{/* TOPICS */}
+<section className="max-w-5xl mx-auto px-6 py-16">
+  <h2 className="text-2xl font-semibold text-center">Topics covered</h2>
+  <p className="mt-3 text-center text-gray-600">
+    Lessons can focus on weekly support, exam revision, or specific weak areas.
+  </p>
+
+  <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {[
+      "Algebra",
+      "Functions and graphs",
+      "Trigonometry",
+      "Calculus",
+      "Analytical geometry",
+      "Euclidean geometry",
+      "Probability and statistics",
+      "Past papers",
+      "Exam revision",
+    ].map((topic) => (
+      <div key={topic} className="border rounded-xl p-4 text-center bg-white">
+        {topic}
+      </div>
+    ))}
+  </div>
+</section>
           </div>
         </section>
 
+          
+        
         {/* TESTIMONIALS */}
         <section className="py-16 bg-gray-50 overflow-hidden">
           <div className="max-w-5xl mx-auto px-6">
