@@ -89,11 +89,122 @@ const whatsappLink = "https://wa.me/27794083205";
       </header>
 
       {page === "#/about" ? (
-  <main className="max-w-5xl mx-auto px-6 py-16">
-    <h1 className="text-4xl font-bold">About Larsen Math Academy</h1>
-    <p className="mt-4 text-gray-600">
-      This will become the full About page.
-    </p>
+  <main>
+    <section className="max-w-5xl mx-auto px-6 py-16">
+      <div className="grid md:grid-cols-[260px_1fr] gap-10 items-center">
+        <div className="flex justify-center md:justify-start">
+          <img
+            src="/larsen-profile.webp"
+            alt="Larsen, maths tutor at Larsen Math Academy"
+            className="w-44 h-44 rounded-full object-cover shadow-md border-4 border-white ring-1 ring-gray-200"
+          />
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide">
+            About Larsen Math Academy
+          </p>
+
+          <h1 className="mt-3 text-4xl font-bold leading-tight">
+            Clear, patient Maths support for Grade 10–12 learners
+          </h1>
+
+          <p className="mt-5 text-lg text-gray-600 leading-8">
+            Hi, I’m Larsen. I help Grade 10–12 learners understand Maths
+            through clear explanations, structured practice, and patient
+            support. My lessons are designed for students who want to improve
+            confidence, prepare for tests and exams, or close gaps from earlier
+            topics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-gray-50 py-16">
+      <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Teaching style</h2>
+          <p className="mt-3 text-gray-600 leading-7">
+            Lessons focus on simple explanations, guided examples, and enough
+            practice for learners to gain confidence.
+          </p>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Who I help</h2>
+          <p className="mt-3 text-gray-600 leading-7">
+            I support Grade 10–12 learners studying IEB, CAPS, or Cambridge
+            International Maths.
+          </p>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold">Lesson format</h2>
+          <p className="mt-3 text-gray-600 leading-7">
+            Lessons are held online via Microsoft Teams, with availability and
+            pricing confirmed before booking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="max-w-5xl mx-auto px-6 py-16">
+      <div className="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-sm">
+        <h2 className="text-2xl font-bold">Contact details</h2>
+
+        <div className="mt-6 grid sm:grid-cols-2 gap-4 text-gray-700">
+          <p>
+            <strong className="text-gray-900">WhatsApp:</strong>{" "}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="text-green-600 font-medium"
+            >
+              +27 79 408 3205
+            </a>
+          </p>
+
+          <p>
+            <strong className="text-gray-900">Email:</strong>{" "}
+            <a
+              href="mailto:larsenmbhoni@gmail.com"
+              className="text-blue-600 font-medium"
+            >
+              larsenmbhoni@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <strong className="text-gray-900">Lessons:</strong> Online via
+            Microsoft Teams
+          </p>
+
+          <p>
+            <strong className="text-gray-900">Response time:</strong> Within
+            24 hours
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="#/book"
+            className="px-5 py-3 rounded-xl bg-blue-600 text-white font-medium text-center"
+          >
+            Book a lesson
+          </a>
+
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="px-5 py-3 rounded-xl bg-green-600 text-white font-medium text-center"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 ) : page === "#/resources" ? (
   <main className="max-w-5xl mx-auto px-6 py-16">
@@ -178,58 +289,6 @@ const whatsappLink = "https://wa.me/27794083205";
             </a>
           </div>
         </section>
-        {/* ABOUT */}
-<section id="about" className="max-w-5xl mx-auto px-6 py-16">
-  <div className="grid md:grid-cols-[220px_1fr] gap-8 items-center">
-    <div className="flex justify-center md:justify-start">
-      <img
-        src="/larsen-profile.webp"
-        alt="Larsen, maths tutor at Larsen Math Academy"
-        className="w-40 h-40 rounded-full object-cover shadow-md border-4 border-white ring-1 ring-gray-200"
-      />
-    </div>
-
-    <div>
-      <h2 className="text-2xl font-semibold">Meet Larsen</h2>
-      <p className="mt-4 text-gray-600 leading-7">
-        I help Grade 10–12 learners understand maths through clear
-        explanations, structured practice, and patient support. My lessons are
-        designed for students who want to improve confidence, prepare for tests
-        and exams, or close gaps from earlier topics.
-      </p>
-
-      <div className="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
-        <p>
-          <strong className="text-gray-900">Lessons:</strong> Online via
-          Microsoft Teams
-        </p>
-        <p>
-          <strong className="text-gray-900">Response:</strong> Within 24 hours
-        </p>
-        <p>
-          <strong className="text-gray-900">WhatsApp:</strong>{" "}
-          <a
-            href="https://wa.me/27794083205"
-            target="_blank"
-            rel="noreferrer"
-            className="text-green-600 font-medium"
-          >
-            +27 79 408 3205
-          </a>
-        </p>
-        <p>
-          <strong className="text-gray-900">Email:</strong>{" "}
-          <a
-            href="mailto:larsenmbhoni@gmail.com"
-            className="text-blue-600 font-medium"
-          >
-            larsenmbhoni@gmail.com
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
         {/* WHO THIS IS FOR */}
 <section className="bg-gray-50 py-16">
