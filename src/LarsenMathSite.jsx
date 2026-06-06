@@ -47,7 +47,7 @@ export default function LarsenMathSite() {
 />
 <span>Larsen Math Academy</span>
           </a>
-          <nav className="flex items-center gap-3 sm:gap-4 text-sm font-medium">
+          <nav className="flex items-center justify-center gap-3 sm:gap-4 text-sm font-medium w-full sm:w-auto">
   <a href="#about" className="text-gray-600 hover:text-gray-900">
     About
   </a>
