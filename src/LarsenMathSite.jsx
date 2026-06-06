@@ -429,13 +429,14 @@ export default function LarsenMathSite() {
           </div> */}
           <div className="mt-8 rounded-2xl border bg-white overflow-hidden shadow-sm">
             <iframe
-              src="https://tally.so/r/xXNLLE?transparentBackground=1"
-              title="Request a lesson"
-              className="w-full h-[1200px] md:h-[900px] lg:h-[850px]"
-              frameBorder="0"
-              marginHeight="0"
-              marginWidth="0"
-            />
+                src="https://tally.so/r/xXNLLE?transparentBackground=1"
+                title="Request a lesson"
+                className="w-full h-[1200px] md:h-[900px] lg:h-[850px]"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                loading="lazy"
+              />
           </div>
           <div className="mt-4 space-y-4">
             {/* <input
