@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://larsenmath.co.za/sitemap.xml
