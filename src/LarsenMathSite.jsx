@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function LarsenMathSite() {
   const [page, setPage] = useState(window.location.hash || "#/");
@@ -56,6 +56,57 @@ export default function LarsenMathSite() {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
+  }, [page]);
+
+  const scrollerRef = useRef(null);
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el || page !== "#/") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    let raf;
+    let paused = false;
+    let resumeTimer;
+    const speed = 0.4; // px per frame — gentle
+
+    const step = () => {
+      if (!paused) {
+        el.scrollLeft += speed;
+        const half = el.scrollWidth / 2;
+        if (el.scrollLeft >= half) el.scrollLeft -= half;
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+
+    const pause = () => {
+      paused = true;
+      clearTimeout(resumeTimer);
+    };
+    const resumeSoon = () => {
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { paused = false; }, 2500);
+    };
+
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resumeSoon);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resumeSoon, { passive: true });
+    el.addEventListener("pointerdown", pause);
+    el.addEventListener("pointerup", resumeSoon);
+    el.addEventListener("wheel", () => { pause(); resumeSoon(); }, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(resumeTimer);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resumeSoon);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resumeSoon);
+      el.removeEventListener("pointerdown", pause);
+      el.removeEventListener("pointerup", resumeSoon);
+    };
   }, [page]);
 
   const whatsappLink = "https://wa.me/27794083205";
@@ -237,7 +288,7 @@ export default function LarsenMathSite() {
 
         /* Hamburger button — hidden on desktop */
         .lm-burger {
-          display: none; align-items: center; justify-content: center;
+          display: none; flex-direction: column; align-items: center; justify-content: center;
           width: 40px; height: 40px; border: none; cursor: pointer;
           border-radius: 11px; background: rgba(120,120,128,0.12);
           color: var(--lm-ink); padding: 0;
@@ -281,14 +332,16 @@ export default function LarsenMathSite() {
           font-size: 18px; font-weight: 500; letter-spacing: -0.015em;
           color: var(--lm-ink); text-decoration: none;
           padding: 15px 16px; border-radius: 13px;
+          display: flex; align-items: center; gap: 12px;
           transition: background-color 0.2s ease, transform 0.2s var(--lm-spring);
         }
         .lm-panel a:active { transform: scale(0.97); }
         .lm-panel a:hover { background: rgba(120,120,128,0.12); }
         .lm-panel .is-book {
-          background: var(--lm-blue); color: #fff; text-align: center;
+          background: var(--lm-blue); color: #fff; justify-content: center;
           margin-top: 8px; box-shadow: 0 6px 16px rgba(10,132,255,0.28);
         }
+        .lm-panel-ic { width: 21px; height: 21px; flex: none; color: var(--lm-ink-3); }
         .lm-panel-close {
           position: absolute; top: 18px; right: 18px;
           width: 34px; height: 34px; border: none; cursor: pointer;
@@ -298,6 +351,7 @@ export default function LarsenMathSite() {
         }
 
         @media (max-width: 640px) {
+          .lm-header-inner { justify-content: flex-start; gap: 12px; }
           .lm-brand span { font-size: 16px; }
           .lm-nav { display: none; }
           .lm-burger { display: inline-flex; }
@@ -323,6 +377,11 @@ export default function LarsenMathSite() {
         .lm-hero { text-align: center; padding: 72px 0 56px; }
         @media (max-width: 640px) { .lm-hero { padding: 48px 0 36px; } }
         .lm-hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+        .lm-hero-cta .lm-btn { min-width: 200px; }
+        @media (max-width: 420px) {
+          .lm-hero-cta { flex-direction: column; align-items: stretch; }
+          .lm-hero-cta .lm-btn { min-width: 0; width: 100%; }
+        }
 
         /* ---- Stats ---- */
         .lm-stat-num {
@@ -343,18 +402,22 @@ export default function LarsenMathSite() {
         .lm-price { font-size: 34px; font-weight: 700; letter-spacing: -0.03em; color: var(--lm-ink); }
 
         /* ---- Testimonials marquee ---- */
-        @keyframes lm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .lm-marquee-mask { position: relative; }
         .lm-marquee-mask::before, .lm-marquee-mask::after {
           content: ""; position: absolute; top: 0; bottom: 0; width: 56px; z-index: 2; pointer-events: none;
         }
         .lm-marquee-mask::before { left: 0; background: linear-gradient(to right, var(--lm-bg), transparent); }
         .lm-marquee-mask::after { right: 0; background: linear-gradient(to left, var(--lm-bg), transparent); }
-        .lm-marquee-track {
-          display: flex; gap: 18px; width: max-content;
-          animation: lm-marquee 70s linear infinite;
+        .lm-scroller {
+          display: flex; gap: 18px; padding: 4px 24px;
+          overflow-x: auto; overflow-y: hidden;
+          scroll-snap-type: x proximity;
+          -webkit-overflow-scrolling: touch;
+          cursor: grab; scrollbar-width: none; -ms-overflow-style: none;
         }
-        .lm-marquee-track:hover { animation-play-state: paused; }
+        .lm-scroller::-webkit-scrollbar { display: none; }
+        .lm-scroller:active { cursor: grabbing; }
+        .lm-scroller .lm-quote-card { scroll-snap-align: center; }
         .lm-quote-card {
           width: 360px; flex: none; background: var(--lm-surface);
           border-radius: var(--lm-radius-card); box-shadow: var(--lm-shadow-sm);
@@ -429,6 +492,7 @@ export default function LarsenMathSite() {
         @media (prefers-reduced-motion: reduce) {
           html { scroll-behavior: auto; }
           .lm-marquee-track { animation: none; }
+          .lm-scroller { scroll-behavior: auto; }
           .lm-reveal { opacity: 1; transform: none; transition: none; }
           .lm-btn, .lm-top { transition: none; }
           .lm-panel, .lm-burger span, .lm-backdrop { transition: none; }
@@ -439,6 +503,14 @@ export default function LarsenMathSite() {
       {/* ================= HEADER ================= */}
       <header className="lm-header">
         <div className="lm-header-inner">
+          <button
+            className={`lm-burger${menuOpen ? " is-open" : ""}`}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <span /><span /><span />
+          </button>
           <a href="#/" className="lm-brand">
             <img src="/favicon2.svg" alt="Larsen Math Academy logo" />
             <span>Larsen Math Academy</span>
@@ -449,14 +521,6 @@ export default function LarsenMathSite() {
             <a href={whatsappLink} target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="#/book" className="is-book">Book</a>
           </nav>
-          <button
-            className={`lm-burger${menuOpen ? " is-open" : ""}`}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((o) => !o)}
-          >
-            <span /><span /><span />
-          </button>
         </div>
       </header>
 
@@ -468,6 +532,12 @@ export default function LarsenMathSite() {
       />
       <nav className={`lm-panel${menuOpen ? " is-open" : ""}`} aria-label="Mobile" aria-hidden={!menuOpen}>
         <button className="lm-panel-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}>✕</button>
+        <a href="#/" onClick={() => setMenuOpen(false)}>
+          <svg className="lm-panel-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Home
+        </a>
         <a href="#/about" onClick={() => setMenuOpen(false)}>About</a>
         <a href="#/resources" onClick={() => setMenuOpen(false)}>Resources</a>
         <a href={whatsappLink} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>WhatsApp</a>
@@ -809,11 +879,7 @@ export default function LarsenMathSite() {
               <h2 className="lm-h2" style={{ textAlign: "center" }}>What parents and learners say</h2>
             </div>
             <div className="lm-marquee-mask" style={{ marginTop: 28 }}>
-              <div
-                className="lm-marquee-track"
-                onTouchStart={(e) => { e.currentTarget.style.animationPlayState = "paused"; }}
-                onTouchEnd={(e) => { e.currentTarget.style.animationPlayState = "running"; }}
-              >
+              <div className="lm-scroller" ref={scrollerRef}>
                 {duplicatedTestimonials.map((item, index) => (
                   <div key={`${item.author}-${index}`} className="lm-quote-card">
                     <div className="lm-stars" aria-label="Rated 5 out of 5 stars">★★★★★</div>
@@ -825,7 +891,7 @@ export default function LarsenMathSite() {
             </div>
             <div className="lm-wrap">
               <p className="lm-caption" style={{ marginTop: 24, textAlign: "center" }}>
-                Hover or swipe to pause and read at your own pace.
+                Touch or hover to pause, then swipe to read at your own pace.
               </p>
             </div>
           </section>
