@@ -109,6 +109,28 @@ export default function LarsenMathSite() {
     };
   }, [page]);
 
+  useEffect(() => {
+    if (page !== "#/book") return;
+    const load = () => {
+      if (window.Tally) {
+        window.Tally.loadEmbeds();
+      } else {
+        document.querySelectorAll("iframe[data-tally-src]").forEach((el) => {
+          el.src = el.getAttribute("data-tally-src");
+        });
+      }
+    };
+    if (document.querySelector('script[src="https://tally.so/widgets/embed.js"]')) {
+      load();
+      return;
+    }
+    const s = document.createElement("script");
+    s.src = "https://tally.so/widgets/embed.js";
+    s.onload = load;
+    s.onerror = load;
+    document.body.appendChild(s);
+  }, [page]);
+
   const whatsappLink = "https://wa.me/27794083205";
 
   const testimonials = [
@@ -263,6 +285,10 @@ export default function LarsenMathSite() {
           transition: opacity 0.2s ease;
         }
         .lm-link:hover { opacity: 0.65; }
+        .lm-reslist { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 16px; }
+        .lm-reslist li { display: flex; flex-direction: column; gap: 3px; }
+        .lm-reslist .lm-link { font-size: 16px; }
+        .lm-resnote { font-size: 13px; line-height: 1.45; color: var(--lm-ink-3); }
 
         /* ---- Header (frosted glass) ---- */
         .lm-header {
@@ -654,31 +680,92 @@ export default function LarsenMathSite() {
               <div className="lm-grid-2">
                 <div className="lm-card">
                   <h2 className="lm-h3">Past papers</h2>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0", display: "grid", gap: 12 }}>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx">DBE / CAPS past papers</a></li>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/">Cambridge International resources</a></li>
+                  <ul className="lm-reslist">
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx">DBE / CAPS past papers</a>
+                      <span className="lm-resnote">Official national exam papers and memos, Grade 12.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.advantagelearn.com/grade-12-past-exam-papers/">Advantage Learn past papers</a>
+                      <span className="lm-resnote">DBE and IEB papers in one easy-to-filter library.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.ieb.co.za/">IEB past papers (official)</a>
+                      <span className="lm-resnote">IEB papers via the “NSC Public Resources” login.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/">Cambridge International</a>
+                      <span className="lm-resnote">Specimen papers and syllabus for IGCSE / AS &amp; A Level.</span>
+                    </li>
                   </ul>
                 </div>
+
                 <div className="lm-card">
-                  <h2 className="lm-h3">Practice and explanations</h2>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0", display: "grid", gap: 12 }}>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.khanacademy.org/math">Khan Academy Maths</a></li>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.siyavula.com/read">Siyavula textbooks</a></li>
+                  <h2 className="lm-h3">Practice and revision</h2>
+                  <ul className="lm-reslist">
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.siyavula.com/">Siyavula Practice</a>
+                      <span className="lm-resnote">Free, CAPS-aligned questions with instant feedback. Zero-rated on major SA networks.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://olico.org/">OLICO Maths</a>
+                      <span className="lm-resnote">SA non-profit with 50,000+ practice questions and a free WhatsApp Maths Hotline: 0600 39 00 00.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.khanacademy.org/math">Khan Academy</a>
+                      <span className="lm-resnote">Video lessons and practice across every topic.</span>
+                    </li>
                   </ul>
                 </div>
+
+                <div className="lm-card">
+                  <h2 className="lm-h3">Video explanations</h2>
+                  <ul className="lm-reslist">
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://learn.mindset.africa/">Mindset Learn</a>
+                      <span className="lm-resnote">SA curriculum video lessons and exam walkthroughs.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.youtube.com/results?search_query=grade+12+maths+caps+south+africa">Grade 10–12 Maths on YouTube</a>
+                      <span className="lm-resnote">Topic-by-topic worked examples to revise a method.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="lm-card">
+                  <h2 className="lm-h3">NBT preparation</h2>
+                  <ul className="lm-reslist">
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://nbt.ac.za/content/preparing-your-learners-0">NBT Project (official)</a>
+                      <span className="lm-resnote">Free prep booklets for the MAT and AQL tests, from the people who set the NBT.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://learn.olico.org/course/index.php?categoryid=30">OLICO NBT practice</a>
+                      <span className="lm-resnote">Free, peer-reviewed NBT workbook plus two full mock MAT papers.</span>
+                    </li>
+                  </ul>
+                </div>
+
                 <div className="lm-card">
                   <h2 className="lm-h3">Graphing and visual tools</h2>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0", display: "grid", gap: 12 }}>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.desmos.com/calculator">Desmos Graphing Calculator</a></li>
-                    <li><a className="lm-link" target="_blank" rel="noreferrer" href="https://www.geogebra.org/">GeoGebra</a></li>
+                  <ul className="lm-reslist">
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.desmos.com/calculator">Desmos Graphing Calculator</a>
+                      <span className="lm-resnote">Plot functions instantly to see how graphs behave.</span>
+                    </li>
+                    <li>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://www.geogebra.org/">GeoGebra</a>
+                      <span className="lm-resnote">Interactive geometry, algebra and calculus.</span>
+                    </li>
                   </ul>
                 </div>
+
                 <div className="lm-card">
                   <h2 className="lm-h3">How to use these resources</h2>
                   <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0", display: "grid", gap: 10 }} className="lm-body">
                     <li>Start with the topic you are struggling with.</li>
                     <li>Use videos or notes to revise the method.</li>
-                    <li>Practise with textbook exercises.</li>
+                    <li>Practise with Siyavula or OLICO questions.</li>
                     <li>Use past papers once the basics are clearer.</li>
                   </ul>
                 </div>
@@ -707,10 +794,15 @@ export default function LarsenMathSite() {
               </p>
               <div className="lm-iframe-frame" style={{ marginTop: 28 }}>
                 <iframe
-                  src="https://tally.so/r/xXNLLE?transparentBackground=1"
+                  data-tally-src="https://tally.so/embed/xXNLLE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  src="https://tally.so/embed/xXNLLE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                   title="Book a lesson"
-                  style={{ height: 900 }}
                   loading="lazy"
+                  width="100%"
+                  height="500"
+                  frameBorder="0"
+                  marginHeight="0"
+                  marginWidth="0"
                 />
               </div>
               <p className="lm-caption" style={{ marginTop: 16, textAlign: "center" }}>
