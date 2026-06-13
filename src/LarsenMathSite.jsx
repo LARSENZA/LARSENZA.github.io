@@ -219,6 +219,15 @@ export default function LarsenMathSite() {
           box-shadow: var(--lm-shadow-sm);
           padding: 20px 22px;
         }
+        .lm-chips {
+          display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+        }
+        .lm-chip {
+          background: var(--lm-surface); color: var(--lm-ink);
+          font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+          padding: 9px 16px; border-radius: 999px;
+          box-shadow: var(--lm-shadow-sm); white-space: nowrap;
+        }
 
         /* ---- Buttons (tap-to-shrink) ---- */
         .lm-btn {
@@ -351,10 +360,12 @@ export default function LarsenMathSite() {
         }
 
         @media (max-width: 640px) {
-          .lm-header-inner { justify-content: flex-start; gap: 12px; }
+          .lm-header-inner { position: relative; justify-content: center; gap: 12px; }
+          .lm-burger { display: inline-flex; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); }
+          .lm-burger:active { transform: translateY(-50%) scale(0.92); }
+          .lm-brand { justify-content: center; }
           .lm-brand span { font-size: 16px; }
           .lm-nav { display: none; }
-          .lm-burger { display: inline-flex; }
         }
 
         /* ---- Grids ---- */
@@ -383,12 +394,19 @@ export default function LarsenMathSite() {
           .lm-hero-cta .lm-btn { min-width: 0; width: 100%; }
         }
 
-        /* ---- Stats ---- */
-        .lm-stat-num {
-          font-size: 40px; font-weight: 700; letter-spacing: -0.03em;
-          color: var(--lm-ink); line-height: 1;
+        /* ---- Stats (slim inline row) ---- */
+        .lm-stat-row {
+          display: flex; align-items: center; justify-content: center;
+          flex-wrap: wrap; gap: 8px 28px;
         }
-        .lm-stat-label { margin-top: 8px; font-size: 15px; color: var(--lm-ink-2); }
+        .lm-stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+        .lm-stat-n { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; color: var(--lm-ink); line-height: 1; }
+        .lm-stat-l { font-size: 13px; color: var(--lm-ink-3); }
+        .lm-stat-div { width: 1px; height: 30px; background: var(--lm-hairline); }
+        @media (max-width: 560px) {
+          .lm-stat-div { display: none; }
+          .lm-stat-row { gap: 18px 28px; }
+        }
 
         /* ---- Steps (numbered — real sequence) ---- */
         .lm-step-num {
@@ -729,27 +747,27 @@ export default function LarsenMathSite() {
           {/* CREDIBILITY */}
           <section className="lm-section-tight">
             <div className="lm-wrap lm-reveal">
-              <div className="lm-card" style={{ padding: "34px 28px" }}>
-                <div className="lm-grid-3" style={{ textAlign: "center" }}>
-                  <div>
-                    <div className="lm-stat-num">500+</div>
-                    <div className="lm-stat-label">Hours of 1:1 tutoring</div>
-                  </div>
-                  <div>
-                    <div className="lm-stat-num">8+</div>
-                    <div className="lm-stat-label">Years of experience</div>
-                  </div>
-                  <div>
-                    <div className="lm-stat-num">Verified</div>
-                    <div className="lm-stat-label">Tutor on TeachMe2</div>
-                  </div>
+              <div className="lm-stat-row">
+                <div className="lm-stat">
+                  <span className="lm-stat-n">500+</span>
+                  <span className="lm-stat-l">Hours of 1:1 tutoring</span>
                 </div>
-                <p className="lm-caption" style={{ marginTop: 22, textAlign: "center", maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
-                  Larsen has tutored through multiple platforms, including
-                  TeachMe2, one of South Africa’s leading tutoring services.{" "}
-                  <a href="https://www.teachme2.co.za/tutors/larsen-30528" target="_blank" rel="noreferrer" className="lm-link">View profile</a>
-                </p>
+                <span className="lm-stat-div" />
+                <div className="lm-stat">
+                  <span className="lm-stat-n">8+</span>
+                  <span className="lm-stat-l">Years of experience</span>
+                </div>
+                <span className="lm-stat-div" />
+                <div className="lm-stat">
+                  <span className="lm-stat-n">Verified</span>
+                  <span className="lm-stat-l">Tutor on TeachMe2</span>
+                </div>
               </div>
+              <p className="lm-caption" style={{ marginTop: 18, textAlign: "center", maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
+                Larsen has tutored through multiple platforms, including
+                TeachMe2, one of South Africa’s leading tutoring services.{" "}
+                <a href="https://www.teachme2.co.za/tutors/larsen-30528" target="_blank" rel="noreferrer" className="lm-link">View profile</a>
+              </p>
             </div>
           </section>
 
@@ -860,14 +878,14 @@ export default function LarsenMathSite() {
               <p className="lm-lead" style={{ marginTop: 12, textAlign: "center" }}>
                 Lessons can focus on weekly support, exam revision, or specific weak areas.
               </p>
-              <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
+              <div className="lm-chips" style={{ marginTop: 24 }}>
                 {[
                   "Algebra", "Functions and graphs", "Trigonometry", "Calculus",
                   "Analytical geometry", "Euclidean geometry",
                   "Probability and statistics", "Past papers", "Exam revision",
                   "NBT preparation",
                 ].map((topic) => (
-                  <div key={topic} className="lm-tile" style={{ textAlign: "center", fontWeight: 500 }}>{topic}</div>
+                  <span key={topic} className="lm-chip">{topic}</span>
                 ))}
               </div>
             </div>
