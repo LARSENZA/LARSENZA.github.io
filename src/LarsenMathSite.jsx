@@ -290,6 +290,25 @@ export default function LarsenMathSite() {
         .lm-reslist .lm-link { font-size: 16px; }
         .lm-resnote { font-size: 13px; line-height: 1.45; color: var(--lm-ink-3); }
 
+        /* ---- Free content / socials ---- */
+          .lm-social-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+          .lm-social-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            min-width: 200px; padding: 15px 26px; border-radius: var(--lm-radius-btn);
+            font-weight: 600; font-size: 17px; letter-spacing: -0.01em; text-decoration: none;
+            color: #fff; transition: transform 0.25s var(--lm-spring), background-color 0.2s ease;
+          }
+          .lm-social-btn:active { transform: scale(0.96); }
+          .lm-social-btn svg { width: 22px; height: 22px; flex: none; }
+          .lm-yt { background: #ff0033; box-shadow: 0 6px 18px rgba(255,0,51,0.28); }
+          .lm-yt:hover { background: #e60030; }
+          .lm-tt { background: var(--lm-ink); box-shadow: 0 6px 18px rgba(28,28,30,0.30); }
+          .lm-tt:hover { background: #000; }
+          @media (max-width: 420px) {
+            .lm-social-cta { flex-direction: column; align-items: stretch; }
+            .lm-social-btn { min-width: 0; width: 100%; }
+          }
+
         /* ---- Header (frosted glass) ---- */
         .lm-header {
           position: sticky; top: 0; z-index: 50;
@@ -1003,6 +1022,30 @@ export default function LarsenMathSite() {
               <p className="lm-caption" style={{ marginTop: 24, textAlign: "center" }}>
                 Touch or hover to pause, then swipe to read at your own pace.
               </p>
+            </div>
+          </section>
+
+          {/* FREE CONTENT / SOCIALS */}
+          <section className="lm-section">
+            <div className="lm-narrow lm-reveal" style={{ textAlign: "center" }}>
+              <h2 className="lm-h2">Learn with me for free</h2>
+              <p className="lm-lead" style={{ marginTop: 12 }}>
+                Watch maths breakdowns on YouTube and follow along on TikTok.
+              </p>
+              <div className="lm-social-cta">
+                <a className="lm-social-btn lm-yt" href="https://youtube.com/@larsenmaths" target="_blank" rel="noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+                  </svg>
+                  YouTube
+                </a>
+                <a className="lm-social-btn lm-tt" href="https://tiktok.com/@larsenmaths" target="_blank" rel="noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 2h-3v13.2a2.4 2.4 0 1 1-2-2.37V9.7a5.7 5.7 0 1 0 5 5.66V8.9a6.9 6.9 0 0 0 4 1.27V7.1a3.9 3.9 0 0 1-4-3.96V2Z" />
+                  </svg>
+                  TikTok
+                </a>
+              </div>
             </div>
           </section>
 
