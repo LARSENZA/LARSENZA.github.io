@@ -950,9 +950,9 @@ export default function LarsenMathSite() {
                 </div>
                 <div className="lm-card">
                   <h3 className="lm-h3">Group Sessions</h3>
-                  <p className="lm-price" style={{ marginTop: 12 }}>More affordable</p>
+                  <p className="lm-price" style={{ marginTop: 12 }}>From R600 monthly</p>
                   <p className="lm-body" style={{ marginTop: 12 }}>
-                    Best for structured weekly practice with other learners. Pricing depends on the group schedule and session length.
+                    Best for structured weekly practice with other learners. Only a maximum of five (5) learners are allowed per class, and pricing depends on the grade.
                   </p>
                 </div>
               </div>
