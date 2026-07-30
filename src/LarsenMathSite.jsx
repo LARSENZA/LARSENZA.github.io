@@ -727,7 +727,7 @@ export default function LarsenMathSite() {
                       <span className="lm-resnote">Free, CAPS-aligned questions with instant feedback. Zero-rated on major SA networks.</span>
                     </li>
                     <li>
-                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://olico.org/">OLICO Maths</a>
+                      <a className="lm-link" target="_blank" rel="noreferrer" href="https://olico.org/national-benchmark-test-practice-nbts/">OLICO Maths</a>
                       <span className="lm-resnote">SA non-profit with 50,000+ practice questions and a free WhatsApp Maths Hotline: 0600 39 00 00.</span>
                     </li>
                     <li>
