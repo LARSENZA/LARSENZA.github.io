@@ -1,3 +1,6 @@
+![Screenshot](docs/screenshot1.png)
+![Screenshot](docs/screenshot2.png)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
